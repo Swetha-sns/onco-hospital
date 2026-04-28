@@ -1,96 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onco Global Cancer Hospital</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Onco Global Cancer Hospital</title>
 
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    header { background:#0a3d62; color:white; padding:15px; text-align:center; }
-    nav { background:#1e3799; padding:10px; text-align:center; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .hero { 
-      background:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3') no-repeat center center/cover; 
-      color:white; 
-      padding:120px 20px; 
-      text-align:center; 
-      position:relative;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
 
-    .hero::before {
-      content:"";
-      position:absolute;
-      top:0; left:0;
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.5);
-    }
+body{
+  background:#f3f7ff;
+  color:#2c3e50;
+}
 
-    .hero h2, .hero p {
-      position:relative;
-      z-index:1;
-    }
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#0a3d62,#1e90ff);
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+}
 
-    .section { padding:30px 40px; }
-    .cards { display:flex; gap:20px; flex-wrap:wrap; }
+header h1{ font-size:30px; }
+header p{ opacity:0.9; }
 
-    .card {
-      flex:1; min-width:250px;
-      border:1px solid #ddd;
-      border-radius:10px;
-      padding:20px;
-      cursor:pointer;
-      text-align:center;
-      transition:0.3s;
-    }
+/* NAV */
+nav{
+  background:rgba(10,61,98,0.95);
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:12px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    .card:hover {
-      transform:translateY(-5px);
-      box-shadow:0 8px 20px rgba(0,0,0,0.2);
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:8px 15px;
+  font-weight:500;
+  transition:0.3s;
+}
 
-    footer {
-      background:#0a3d62;
-      color:white;
-      text-align:center;
-      padding:20px;
-    }
+nav a:hover{
+  color:#00e6e6;
+}
 
-    .service-detail { display:none; padding:40px; }
+/* HERO */
+.hero{
+  background:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3') center/cover no-repeat;
+  height:450px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+}
 
-    /* ✅ WhatsApp Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      z-index: 9999;
-      background-color: #25D366;
-      border-radius: 50%;
-      padding: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
 
-    .whatsapp-float img {
-      width: 40px;
-      height: 40px;
-    }
-  </style>
+.hero-content{
+  position:relative;
+  max-width:700px;
+  padding:20px;
+}
 
-  <script>
-    function showService(name) {
-      document.getElementById('mainContent').style.display = 'none';
-      document.getElementById('serviceDetail').style.display = 'block';
-      document.getElementById('serviceTitle').innerText = name;
-      document.getElementById('serviceDesc').innerText =
-        name + " treatment at Onco Global Cancer Hospital is handled by expert specialists.";
-    }
+.hero h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
 
-    function goBack() {
-      document.getElementById('mainContent').style.display = 'block';
-      document.getElementById('serviceDetail').style.display = 'none';
-    }
-  </script>
+.hero p{
+  opacity:0.9;
+  margin-bottom:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  background:#00e6e6;
+  color:#0a3d62;
+  font-weight:600;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* SECTION */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:35px;
+  color:#0a3d62;
+  font-size:28px;
+}
+
+.section h2::after{
+  content:"";
+  width:80px;
+  height:3px;
+  background:#00e6e6;
+  display:block;
+  margin:10px auto;
+  border-radius:10px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+.card h3{
+  color:#1e90ff;
+  margin-bottom:6px;
+}
+
+/* CONTACT */
+.contact-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.info-box{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.contact-box{
+  background:linear-gradient(135deg,#0a3d62,#1e90ff);
+  color:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.contact-box a{
+  display:inline-block;
+  background:white;
+  color:#0a3d62;
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+  background:#0a3d62;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:9998;
+}
+
+.whatsapp-float img{
+  width:55px;
+  height:55px;
+}
+
+/* CHATBOT FIX */
+.embeddedServiceHelpButton{
+  z-index:99999 !important;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h2{ font-size:26px; }
+}
+</style>
 </head>
 
 <body>
@@ -102,49 +232,108 @@
 
 <nav>
   <a href="#">Home</a>
-  <a href="#">About Us</a>
-  <a href="#">Departments</a>
-  <a href="#">Patients</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Doctors</a>
   <a href="#">Contact</a>
 </nav>
 
-<div id="mainContent">
-
+<!-- HERO -->
 <section class="hero">
-  <h2>Your Fight Against Cancer Starts Here</h2>
-  <p>World-class oncology care</p>
-</section>
-
-<section class="section">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card" onclick="showService('Blood Cancer')">Blood Cancer</div>
-    <div class="card" onclick="showService('Brain Tumor')">Brain Tumor</div>
-    <div class="card" onclick="showService('Breast Cancer')">Breast Cancer</div>
+  <div class="hero-content">
+    <h2>Hope. Healing. Life.</h2>
+    <p>World-class oncology care with advanced technology & expert doctors</p>
+    <a href="#" class="btn">Book Appointment</a>
   </div>
 </section>
 
-</div>
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Our Hospital</h2>
+  <p style="text-align:center; max-width:900px; margin:auto; line-height:1.8;">
+    Onco Global Cancer Hospital is a leading oncology center providing advanced cancer treatment with compassion.
+    We specialize in medical, surgical, radiation, and pediatric oncology with modern technology and expert care.
+  </p>
+</section>
 
-<div id="serviceDetail" class="service-detail">
-  <button onclick="goBack()">← Back</button>
-  <h2 id="serviceTitle"></h2>
-  <p id="serviceDesc"></p>
-</div>
+<!-- SERVICES -->
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">🩸 Blood Cancer</div>
+    <div class="card">🧠 Brain Tumor</div>
+    <div class="card">🎗 Breast Cancer</div>
+    <div class="card">🧬 Immunotherapy</div>
+    <div class="card">🫁 Lung Cancer</div>
+    <div class="card">🔪 Surgical Oncology</div>
+    <div class="card">👩‍⚕ Gynecologic Oncology</div>
+    <div class="card">💊 Medical Oncology</div>
+    <div class="card">☢ Radiation Oncology</div>
+    <div class="card">👶 Pediatric Oncology</div>
+  </div>
+</section>
+
+<!-- PATIENT STORIES -->
+<section class="section">
+  <h2>Patient Stories</h2>
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+      <h3>Ravi Kumar</h3>
+      <p>Recovered successfully with expert treatment.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464">
+      <h3>Anita Sharma</h3>
+      <p>Received excellent care and emotional support.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+  <h2>Contact & Support</h2>
+
+  <div class="contact-container">
+
+    <div class="info-box">
+      <h3 style="color:#1e90ff;">Why Choose Us?</h3>
+      <p style="line-height:1.8; margin-top:10px;">
+        ✔ Expert oncologists<br>
+        ✔ Advanced treatment technology<br>
+        ✔ 24/7 emergency care<br>
+        ✔ Personalized care plans
+      </p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Get In Touch</h3>
+      <p>📧 info@oncoglobal.com</p>
+      <p>📞 +91 9000184400</p>
+      <p>📍 Bangalore, India</p>
+
+      <a href="https://wa.me/919000184400?text=Hello%20Onco%20Global%20Hospital">WhatsApp Us</a>
+    </div>
+
+  </div>
+</section>
 
 <footer>
   <p>© 2026 Onco Global Cancer Hospital</p>
 </footer>
 
-<!-- ✅ WhatsApp (BEST WORKING VERSION) -->
-<a href="https://wa.me/919000184400"
-   class="whatsapp-float"
-   onclick="window.location.href='whatsapp://send?phone=919000184400'">
-   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<!-- WHATSAPP -->
+<a class="whatsapp-float"
+   href="https://wa.me/919000184400"
+   target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
-<!-- ✅ Salesforce Chatbot (FIXED STRUCTURE) -->
-<script>
+<!-- SALESFORCE CHATBOT -->
+<script type="text/javascript">
 function initEmbeddedMessaging() {
   try {
     embeddedservice_bootstrap.settings.language = 'en_US';
@@ -152,7 +341,7 @@ function initEmbeddedMessaging() {
     embeddedservice_bootstrap.init(
       '00Dbm00000flR8P',
       'Onco_Global_Hospital',
-      'https://orgfarm-60148a50e9.my.site.com',
+      'https://orgfarm-60148a50e9.my.site.com/ESWOncoGlobalHospital1776236960791',
       {
         scrt2URL: 'https://orgfarm-60148a50e9.my.salesforce-scrt.com'
       }
@@ -163,8 +352,8 @@ function initEmbeddedMessaging() {
 }
 </script>
 
-<script src="https://orgfarm-60148a50e9.my.site.com/assets/js/bootstrap.min.js"
-        onload="initEmbeddedMessaging()"></script>
+<script src="https://orgfarm-60148a50e9.my.site.com/ESWOncoGlobalHospital1776236960791/assets/js/bootstrap.min.js"
+onload="initEmbeddedMessaging()"></script>
 
 </body>
 </html>
