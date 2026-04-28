@@ -198,17 +198,30 @@ footer{
   padding:20px;
 }
 
-/* WHATSAPP */
 .whatsapp-float{
   position:fixed;
+  right:20px;      /* RIGHT SIDE */
   bottom:20px;
-  right:20px;
-  z-index:9998;
+  z-index:99998;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  transition:0.3s;
 }
 
 .whatsapp-float img{
-  width:55px;
-  height:55px;
+  width:32px;
+  height:32px;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
+  box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
 
 /* CHATBOT FIX */
