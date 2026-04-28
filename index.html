@@ -145,12 +145,12 @@
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US';
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
 			embeddedservice_bootstrap.init(
 				'00Dbm00000flR8P',
-				'Onco_Global_Agent',
-				'https://orgfarm-60148a50e9.my.site.com/ESWOncoGlobalAgent1776237153610',
+				'Onco_Global_Hospital',
+				'https://orgfarm-60148a50e9.my.site.com/ESWOncoGlobalHospital1776236960791',
 				{
 					scrt2URL: 'https://orgfarm-60148a50e9.my.salesforce-scrt.com'
 				}
@@ -160,11 +160,7 @@
 		}
 	};
 </script>
-
-<script type='text/javascript'
-  src='https://orgfarm-60148a50e9.my.site.com/ESWOncoGlobalAgent1776237153610/assets/js/bootstrap.min.js'
-  onload='initEmbeddedMessaging()'>
-</script>
+<script type='text/javascript' src='https://orgfarm-60148a50e9.my.site.com/ESWOncoGlobalHospital1776236960791/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 </body>
 </html>
